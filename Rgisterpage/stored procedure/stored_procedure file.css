@@ -1,0 +1,19 @@
+﻿body {
+}
+
+
+/*ALTER PROCEDURE ProductCatShow
+AS
+BEGIN
+SELECT P.ProductId,
+p. ProductName,
+c.CategoryId,
+c.CategoryName,
+c.status
+
+FROM Products P
+INNER JOIN Categories c ON P.CategoryId = c.CategoryId
+END
+
+EXECUTE ProductCatShow  
+*/

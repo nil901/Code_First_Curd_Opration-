@@ -32,7 +32,7 @@ namespace Rgisterpage.Controllers
             param2.SqlDbType = SqlDbType.NVarChar;
             param2.SqlValue = pageSize;
 
-            var result = await db.Product.SqlQuery("ShowProduct").ToListAsync();
+            var result = await db.Product.SqlQuery("ProductCatShow").ToListAsync();
 
 
 

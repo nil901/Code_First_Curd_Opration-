@@ -7,13 +7,13 @@ namespace Rgisterpage.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class User : IMigrationMetadata
+    public sealed partial class user : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(User));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(user));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206200445456_User"; }
+            get { return "202207090348450_user"; }
         }
         
         string IMigrationMetadata.Source

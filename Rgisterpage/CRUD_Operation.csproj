@@ -119,6 +119,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="stored procedure\stored_procedure file.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -130,9 +131,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206200445456_User.cs" />
-    <Compile Include="Migrations\202206200445456_User.designer.cs">
-      <DependentUpon>202206200445456_User.cs</DependentUpon>
+    <Compile Include="Migrations\202207090348450_user.cs" />
+    <Compile Include="Migrations\202207090348450_user.designer.cs">
+      <DependentUpon>202207090348450_user.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -191,8 +192,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206200445456_User.resx">
-      <DependentUpon>202206200445456_User.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202207090348450_user.resx">
+      <DependentUpon>202207090348450_user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
