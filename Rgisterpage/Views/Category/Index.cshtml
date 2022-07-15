@@ -41,7 +41,7 @@
         
 
 
-        @if (item.ActiveOrNot == true)
+        @if (item.ActiveOrNot == false)
         {
 
             @Html.ActionLink("Activate", "Active", new { CategoryId = item.CategoryId}, new { @class = "btn btn-success" })

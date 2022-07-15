@@ -12,10 +12,11 @@ namespace Rgisterpage.Controllers
     {
         private Contex db = new Contex();
 
-        public async Task<ActionResult> Index(int pg = 1)
+        public async Task<ActionResult> Index(int pg = 1, bool a=true)
         {
 
-            var AllProducts = await db.Product.ToListAsync();
+           // var AllProducts = await db.Product.Include(c => c.Category_model).Where(x => x.Category_model.ActiveOrNot.Equals(a)).ToListAsync();
+
 
             const int pageSize = 2;
             var param1 = new SqlParameter();
@@ -23,7 +24,7 @@ namespace Rgisterpage.Controllers
             param1.SqlDbType = SqlDbType.Int;
             param1.SqlValue = pg;
 
-            var param2 = new SqlParameter();  
+            var param2 = new SqlParameter();
             param2.ParameterName = "@PageSize";
             param2.SqlDbType = SqlDbType.NVarChar;
             param2.SqlValue = pageSize;
@@ -37,7 +38,7 @@ namespace Rgisterpage.Controllers
                 pg = 1;
             }
 
-            int rescount = AllProducts.Count();
+            int rescount = result.Count();
             //int rescount = result.Count();
 
             var pager = new Pager(rescount, pg, pageSize);
