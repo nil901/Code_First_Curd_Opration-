@@ -111,6 +111,38 @@ namespace Rgisterpage.Controllers
             return View(category_model);
         }
 
+        public async Task<ActionResult> Active(Category category)
+        {
+            var act = await db.Category.SingleAsync(c => c.CategoryId == category.CategoryId);
+            act.ActiveOrNot = true;
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index", "Product");
+        }
+
+        //public async Task<ActionResult> Deactive(Category category)
+        //{
+        //    if (category == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Category category_model = await db.Category.FindAsync(category.CategoryId);
+        //    if (category_model == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(category_model);
+        //}
+
+        public async Task<ActionResult> Deactive(Category category)
+        {
+            var deact = await db.Category.SingleAsync(c => c.CategoryId == category.CategoryId);
+            deact.ActiveOrNot = false;
+            await db.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Product");
+
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
