@@ -230,3 +230,7 @@ E:\FinalworkNimapInfotechIntership\Curd\Rgisterpage\obj\Debug\CRUD_Operation.csp
 E:\FinalworkNimapInfotechIntership\Curd\Rgisterpage\obj\Debug\CRUD_Operation.csproj.CopyComplete
 E:\FinalworkNimapInfotechIntership\Curd\Rgisterpage\obj\Debug\Rgisterpage.dll
 E:\FinalworkNimapInfotechIntership\Curd\Rgisterpage\obj\Debug\Rgisterpage.pdb
+E:\FinalworkNimapInfotechIntership\Curd\Rgisterpage\bin\PagedList.dll
+E:\FinalworkNimapInfotechIntership\Curd\Rgisterpage\bin\PagedList.Mvc.dll
+E:\FinalworkNimapInfotechIntership\Curd\Rgisterpage\bin\PagedList.xml
+E:\FinalworkNimapInfotechIntership\Curd\Rgisterpage\bin\PagedList.Mvc.xml

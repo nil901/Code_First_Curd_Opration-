@@ -7,7 +7,7 @@
 
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+   @Html.ActionLink("Create New", "Create", new { @class = "btn btn-warning" })
 </p>
 <table class="table">
     <tr>
@@ -35,9 +35,9 @@
         @Html.DisplayFor(modelItem => item.status)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+        @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CategoryId }, new { @class = "btn btn-success" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { @class = "btn btn-success" })
         
 
 

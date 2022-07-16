@@ -3,9 +3,23 @@
 @{
     ViewBag.Title = "Index";
 }
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+<a class="btn btn-primary m-3"  href="/Product/Create" style="background: green ">Create</a> 
+
+
+<form method="get" asp-action=" Index">
+    <p>
+        <input type="search" placeholder="Search a Product...." value="@ViewData["GetProductDetails"]" name="Prosearch" style="width:100%; outline: none " />
+        <input type="submit" value="search" class="btn btn-primary  " style="background: green"/>
+        <a asp-action="Index">Get All Employee</a>
+
+    </p>
+
+
+</form>
+
+
+
 <table class="table">
     <tr>
         <th>
@@ -20,23 +34,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category_model.CategoryName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category_model.status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category_model.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category_model.status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductId }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = "btn btn-success" })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -12,42 +12,31 @@ namespace Rgisterpage.Controllers
     {
         private Contex db = new Contex();
 
-        public async Task<ActionResult> Index(int pg = 1, bool a=true)
+        public async Task<ActionResult> Index(int? page, bool a=true)
         {
 
-           // var AllProducts = await db.Product.Include(c => c.Category_model).Where(x => x.Category_model.ActiveOrNot.Equals(a)).ToListAsync();
+            // var AllProducts = await db.Product.Include(c => c.Category_model).Where(x => x.Category_model.ActiveOrNot.Equals(a)).ToListAsync();
 
 
-            const int pageSize = 2;
-            var param1 = new SqlParameter();
-            param1.ParameterName = "@PageNumber";
-            param1.SqlDbType = SqlDbType.Int;
-            param1.SqlValue = pg;
+ 
+            var result = await db.Product.SqlQuery("ProductCatShow").ToListAsync(); 
 
-            var param2 = new SqlParameter();
-            param2.ParameterName = "@PageSize";
-            param2.SqlDbType = SqlDbType.NVarChar;
-            param2.SqlValue = pageSize;
+            return View(result);
+        } 
+        [HttpGet]
+        public async Task<ActionResult>Index(string proSearch)
+        {
+            ViewData["GetProductDetails"] = proSearch;
 
-            var result = await db.Product.SqlQuery("ProductCatShow").ToListAsync();
-
-
-
-            if (pg < 1)
-            {
-                pg = 1;
+            var Product = from x in db.Product select x; 
+            if(!string.IsNullOrEmpty(proSearch))  {
+                Product = Product.Where(x=> x.ProductName.Contains(proSearch));
+              
             }
+            return View(await Product.AsNoTracking().ToListAsync());
 
-            int rescount = result.Count();
-            //int rescount = result.Count();
 
-            var pager = new Pager(rescount, pg, pageSize);
-            //int recSkip = (pg - 1) * pageSize;
-            //var data = AllProducts.Skip(recSkip).Take(pager.PageSize).ToList();
-            var data = result;
-            this.ViewBag.pager = pager;
-            return View(data);
-        }
+        } 
 
         public ActionResult Create()
         {
@@ -112,8 +101,9 @@ namespace Rgisterpage.Controllers
             {
                 return RedirectToAction("Index");
             }
-            return View();
-        }
+            return View(); 
+
+        } 
 
 
     }
