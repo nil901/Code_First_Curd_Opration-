@@ -12,7 +12,8 @@ namespace Rgisterpage.Models
         public DbSet<Rgister> Rgister { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Product> Product { get; set; }
-        public DbSet<ProductCat> ProductCat { get; set; }
+        public DbSet<ProductCat> ProductCat { get; set; } 
+        public DbSet<Login> Login { get; set; } 
        
 
     }

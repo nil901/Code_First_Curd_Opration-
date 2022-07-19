@@ -15,13 +15,13 @@ namespace Rgisterpage.Controllers
         public async Task<ActionResult> Index(int? page, bool a=true)
         {
 
-            // var AllProducts = await db.Product.Include(c => c.Category_model).Where(x => x.Category_model.ActiveOrNot.Equals(a)).ToListAsync();
+             var AllProducts = await db.Product.Include(c => c.Category_model).Where(x => x.Category_model.ActiveOrNot.Equals(a)).ToListAsync();
 
 
  
-            var result = await db.Product.SqlQuery("ProductCatShow").ToListAsync(); 
+           // var result = await db.Product.SqlQuery("ProductCatShow").ToListAsync(); 
 
-            return View(result);
+            return View(AllProducts);
         } 
         [HttpGet]
         public async Task<ActionResult>Index(string proSearch)

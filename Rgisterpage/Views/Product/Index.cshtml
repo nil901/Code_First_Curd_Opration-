@@ -11,7 +11,7 @@
     <p>
         <input type="search" placeholder="Search a Product...." value="@ViewData["GetProductDetails"]" name="Prosearch" style="width:100%; outline: none " />
         <input type="submit" value="search" class="btn btn-primary  " style="background: green"/>
-        <a asp-action="Index">Get All Employee</a>
+        <a asp-action="Index">Get All Product</a> 
 
     </p>
 
@@ -48,8 +48,8 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ProductId }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = "btn btn-success" })
+                @*@Html.ActionLink("Details", "Details", new { id = item.ProductId }, new { @class = "btn btn-success" }) |*@
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }

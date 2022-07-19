@@ -30,9 +30,23 @@
                     
                     
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" style="float:right !important">
+                    <li class="nav-item"><p class="nav-link" style="color:#fff; margin-bottom:2px" ></p></li>
+                    @if (Session["Username"] != null)
+                    {
+
+                        <li><p style="color:#fff ">Hello @Session["Username"]</p></li>
+                        <li>@Html.ActionLink("LogOut", "LogOut", "Login")</li>
+
+                    }
+                    else
+                    { 
+
+                        //<li>@Html.ActionLink("SignUp", "SignUp", "Login") </li>
+                        <li>@Html.ActionLink("Login", "Login", "Login") </li>
+
+                    }
+
                 </form>
             </div>
         </div>

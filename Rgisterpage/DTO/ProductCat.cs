@@ -20,7 +20,7 @@ namespace Rgisterpage.DTO
 
         public string CategoryName { get; set; }
 
-        public string status { get; set; }
+        public string price { get; set; }
 
       
     }

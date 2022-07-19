@@ -12,7 +12,8 @@ c.CategoryName,
 c.status
 
 FROM Products P
-INNER JOIN Categories c ON P.CategoryId = c.CategoryId
+INNER JOIN Categories c ON P.CategoryId = c.CategoryId  
+
 END
 
 EXECUTE ProductCatShow  
